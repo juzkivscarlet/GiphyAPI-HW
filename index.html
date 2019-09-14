@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Giphy</title>
+
+        <!-- CSS: reset, Bootstrap, custom -->
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- JavaScript: jQuery, Popper.js, Bootstrap JS, custom -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script src="assets/js/app.js"></script>
+    </head>
+
+    <body>
+
+        <div class="container container-fluid">
+            <div class="jumbotron jumbotron-fluid">
+                <small class="text-muted">App by Matt Juskiw</small>
+                <h1 class="display-4 text-center">Giphy! - Reactions</h1>
+                <p class="lead text-center">Search Giphy for reaction gifs!</p>
+                <hr class="my-4">
+                <p>Choose category: </p>
+                <div id="gifBtns">
+                    <!-- Buttons here -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="display">
+
+                    </div>
+                </div>
+
+                <div class="col-md-4" id="search">
+                    <div class="card text-right">
+                        <div class="card-header">Search Giphy</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Add Term</h5>
+
+                            <div class="input-group input-group-sm mb-3">
+                                <input type="text" class="form-control" id="search-term">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-outline-secondary" id="add-term">Add Term</button>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-sm btn-outline-danger" id="clearDisplay">Clear Results</button>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Filters</h5>
+
+                            <div class="input-group input-group-sm mb-3">
+
+                                <select class="custom-select" id="ratingSelect">
+                                    <option selected>Choose...</option>
+                                    <option value="g">G</option>
+                                    <option value="pg">PG</option>
+                                    <option value="pg13">PG-13</option>
+                                    <option value="r">R</option>
+                                </select>
+
+                                <div class="input-group-append">
+                                    <label class="input-group-text" for="ratingSelect">Rating</label>
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-sm btn-outline-secondary" id="filter-search">Apply filter(s)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
