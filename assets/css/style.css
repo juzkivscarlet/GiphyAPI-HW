@@ -1,0 +1,18 @@
+html, body {
+    width: 100%;
+}
+
+.jumbotron {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.jumbotron h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+.jumbotron p {
+    font-size: 18px;
+}
