@@ -105,10 +105,10 @@ $(document).ready(function() {
             p.attr('id','d'+(deckCount-1)+"Img"+cardCount+"rating");
             newBody.append(p);
 
-            var b = $("<button>").attr('id','d'+(deckCount-1)+'Img'+cardCount+"fave").attr('data-img-fave',isFave);
+            var b = $("<button>").attr('id','d'+(deckCount-1)+'Img'+cardCount+"fave");
             if(isFave) {
-                b.text("Remove from faves").addClass("btn btn-sm btn-outline-danger fav-manage");
-            } else b.text("Add to faves").addClass("btn btn-sm btn-primary fav-manage");;
+                b.text("Remove from faves").addClass("btn btn-sm btn-outline-danger fav-manage").attr('data-img-fave','true');
+            } else b.text("Add to faves").addClass("btn btn-sm btn-primary fav-manage").attr('data-img-fave','false');
             
             newBody.append(b);
 
@@ -142,21 +142,21 @@ $(document).ready(function() {
         var img = $("#"+imgId);
         var src = img.attr('src');
 
-        if($(this).attr('data-img-fave')==false) {
+        if($(this).attr('data-img-fave')=='false') {
             // image isn't favorited already, append to faves
             faves[faves.length] = {
                 title: $("#"+imgId+"title").text(),
                 src: src,
                 rating: $("#"+imgId+"rating").text()
             };
-            $(this).text("Remove from faves").removeClass("btn-primary").addClass("btn-outline-danger").attr('data-img-fav',true);
+            $(this).text("Remove from faves").removeClass("btn-primary").addClass("btn-outline-danger").attr('data-img-fav','true');
         } else {
             // image is already favorited, remove from faves
             for(var i=0; i<faves.length; i++) {
                 if(faves[i].src==src) var n=i;
             }
             faves.splice(n,1);
-            $(this).text("Add to faves").removeClass("btn-outline-danger").addClass("btn-primary").attr('data-img-fav',false);
+            $(this).text("Add to faves").removeClass("btn-outline-danger").addClass("btn-primary").attr('data-img-fav','false');
         }
 
         
