@@ -133,7 +133,7 @@ $(document).ready(function() {
 
     $("#showFaves").click(function(e) {
         e.preventDefault();
-        var term = "Favorite Gifs!";
+        var term = "Favorite Gifs! ("+faves.length+")";
         showResults(faves,term);
     });
 
