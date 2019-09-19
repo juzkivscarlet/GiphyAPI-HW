@@ -53,15 +53,11 @@ $(document).ready(function() {
         }).then(function(data) {
             
             var results = data.data;
-            console.log(results);
             showResults(results,term);
-            
-            // console.log(cards);
         });
     });
 
     function showResults(results,term) {
-        console.log(results);
         var header = $("<h2>").text(term);
 
         var newSearch = $("<div>").attr('id','search-'+searchCount);
@@ -71,7 +67,6 @@ $(document).ready(function() {
 
         for(var i=0; i<(Math.ceil(results.length/3)); i++) {
             var newDeck = $("<div>").addClass("card-deck").attr('id','deck-'+deckCount);
-            // console.log('deck-'+deckCount);
             newSearch.prepend(newDeck);
             decks.push(newDeck);
             deckCount++;
